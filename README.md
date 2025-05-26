@@ -1,3 +1,4 @@
+
 # Kuchnia mikrofalowa
 
 ---
@@ -34,9 +35,73 @@ Z punktu widzenia użytkownika, obsługa kuchenki mikrofalowej jest intuicyjna i
 ---
 
 ## Spis komponentów AADL z komentarzem
-                                       |
+   
+###  Pakiet: `MicrowaveSystem`
+
+Zawiera wszystkie komponenty opisujące system mikrofalówki.
 
 ---
+
+###  Common_Types
+Zawiera stworzone typy danych, magistrale i pamięć
+
+
+| Nazwa                  | Opis                                                                 |
+|------------------------|----------------------------------------------------------------------|
+| `HeatPower`            | Zakres mocy grzania od 0 do 100.                                     |
+| `OperationMode`        | Tryby pracy: `OFF`, `HEATING`, `DEFROST`, `GRILL`.       |
+| `UserCommand` | Dane wejściowe: tryb, moc, czas, sygnał start/stop.                 |
+| `SystemStatus`| Dane wyjściowe: tryb, moc, drzwi, czas, moc aktualna, komunikaty. 
+| `RAM`         		 | Pamięć używana przez urządzenia i procesor.   	
+| `ethernet` 			 | Reprezentuje magistralę komunikacyjną (np. Ethernet). |
+
+---
+
+### Devices
+
+| Nazwa         | Opis                                                                 |
+|---------------|----------------------------------------------------------------------|
+| `Door_Sensor` | Czujnik drzwi – status drzwi i sygnał awaryjnego zatrzymania.        |
+| `Timer`       | Obsługa czasu grzania – start, stop, timeout, pauza.                |
+| `Heater`      | Urządzenie grzewcze – przyjmuje moc i zwraca faktyczną moc.         |
+| `UI`          | Interfejs użytkownika – polecenia wejściowe i wyświetlanie statusu. |                                 
+
+---
+
+
+###  Wątki
+
+| Nazwa     | Opis                                                                  |
+|-----------|-----------------------------------------------------------------------|
+| `tDoor`   | Obsługuje status drzwi i sygnały awaryjne.                           |
+| `tTimer`  | Zarządza czasem pracy grzania.                                       |
+| `tHeater` | Ustawia i odczytuje faktyczną moc grzania.                           |
+| `tUI`     | Przyjmuje polecenia użytkownika i steruje pracą timera.             |
+
+---
+
+### Process
+
+| Nazwa             | Opis                                                                 |
+|-------------------|----------------------------------------------------------------------|
+| `Controller`      | Główny kontroler – przetwarza polecenia i zarządza komponentami.     |
+
+---
+
+###  Processor
+
+| Nazwa    | Opis                                                                    |
+|----------|-------------------------------------------------------------------------|
+| `corei5` | Procesor wykonujący wątki – planowanie Round Robin, okres zegara 1ms.  |
+
+---
+
+### System
+
+| Nazwa                  | Opis                                                                  |
+|------------------------|-----------------------------------------------------------------------|
+| `MicrowaveSystem`      | Główna deklaracja systemu. Implementacja systemu – komponenty, połączenia, przypisania zasobów.                                            |
+
 
 ## Model - rysunek
 
