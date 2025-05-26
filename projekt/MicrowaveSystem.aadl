@@ -1,0 +1,268 @@
+package MicrowaveSystem
+public
+    with Base_Types;
+    with Data_Model;
+
+    bus ethernet
+    end ethernet;
+
+    memory RAM
+        features
+            BA1: requires bus access ethernet;
+    end RAM;
+
+    memory implementation RAM.Standard
+    end RAM.Standard;
+
+    data TemperatureType
+        properties
+            Data_Model::Data_Representation => Integer;
+    end TemperatureType;
+
+    data HeatPower
+        properties
+            Data_Model::Data_Representation => Integer;
+            Data_Model::Integer_Range => 0 .. 100;
+    end HeatPower;
+
+    data OperationMode
+        properties
+            Data_Model::Enumerators => ("OFF", "STANDBY", "HEATING", "DEFROST", "GRILL");
+    end OperationMode;
+
+    data UserCommand
+    end UserCommand;
+
+    data implementation UserCommand.impl
+        subcomponents
+            mode_selection: data OperationMode;
+            power_level: data HeatPower;
+            timer_setting: data Base_Types::Integer_32;
+            start_stop: data Base_Types::Boolean;
+    end UserCommand.impl;
+
+    data SystemStatus
+    end SystemStatus;
+
+    data implementation SystemStatus.impl
+        subcomponents
+            temperature: data TemperatureType;
+            power_level: data HeatPower;
+            operation_mode: data OperationMode;
+            door_open: data Base_Types::Boolean;
+            remaining_time: data Base_Types::Integer_32;
+            current_power: data Base_Types::Integer_32;
+            current_temp: data Base_Types::Float;
+            message: data Base_Types::String;
+    end SystemStatus.impl;
+    
+    ---------------------------------------------------------------
+    
+    device Door_Sensor
+        features
+            door_status: out data port Base_Types::Boolean;
+            emergency_stop: out event port;
+            BA1: requires bus access ethernet;
+    end Door_Sensor;
+
+    device implementation Door_Sensor.impl
+    end Door_Sensor.impl;
+    
+    device Timer
+        features
+            start: in event port;
+            stop: in event port;
+            pause: in event port;
+            time_set: in data port Base_Types::Integer_32;
+            time_remaining: out data port Base_Types::Integer_32;
+            timeout: out event port;
+            timer_state: out data port Base_Types::Boolean;
+            BA1: requires bus access ethernet;
+    end Timer;
+
+    device implementation Timer.Impl
+    end Timer.Impl;
+    
+    device Heater
+        features
+            power_setpoint: in data port HeatPower;
+            current_temp: in data port Base_Types::Float;
+            power_output: out data port HeatPower;
+            heater_status: out data port Base_Types::Boolean;
+            BA1: requires bus access ethernet;
+    end Heater;
+
+    device implementation Heater.impl
+    end Heater.impl;
+    
+    device UI
+        features
+            user_input_in: in event data port UserCommand;
+            user_input_out: in event data port UserCommand;
+            system_status: in data port SystemStatus;
+            timer_control: out event port;
+            BA1: requires bus access ethernet;
+    end UI;
+    
+    device implementation UI.impl
+    end UI.impl;
+    
+    
+    ----------------------------------------------------------------------------------------------------------
+    thread tDoor
+        features
+            status_out: out data port Base_Types::Boolean;
+            emergency: out event port;
+        properties
+            Dispatch_Protocol => Periodic;
+            Period => 20 ms;
+    end tDoor;
+
+    thread implementation tDoor.impl
+    end tDoor.impl;
+    
+    thread tTimer
+        features
+            start: in event port;
+            stop: in event port;
+            time_set: in data port Base_Types::Integer_32;
+            time_remaining: out data port Base_Types::Integer_32;
+            timeout: out event port;
+        properties
+            Dispatch_Protocol => Periodic;
+            Period => 1000 ms;
+            Compute_Execution_Time => 1 ms .. 2 ms;
+    end tTimer;
+    
+    thread implementation tTimer.impl
+    end tTimer.impl;
+    
+    thread tHeater
+        features
+            power_setpoint: in data port HeatPower;
+            current_temp: in data port Base_Types::Float;
+            power_output: out data port HeatPower;
+        properties
+            Dispatch_Protocol => Periodic;
+            Period => 50 ms;
+            Compute_Execution_Time => 2 ms .. 5 ms;
+    end tHeater;
+
+    thread implementation tHeater.impl
+    end tHeater.impl;
+    
+    thread tUI
+        features
+            user_input_in: in event data port UserCommand;
+            user_input_out: out event data port UserCommand;
+            system_status: in data port SystemStatus;
+            timer_control: out event port;
+        properties
+            Dispatch_Protocol => Periodic;
+            Period => 20 ms;
+    end tUI;
+    
+    thread implementation tUI.impl
+    end tUI.impl;
+    
+  
+
+	process Controller
+        features
+            user_cmdIn: in event data port UserCommand;
+            heater_power: out data port HeatPower;
+            operation_mode: out data port OperationMode;
+            timer_value: out data port Base_Types::Integer_32;
+    end Controller;
+
+    process implementation Controller.impl
+        subcomponents
+            tUI: thread tUI.impl;
+            tHeater: thread tHeater.impl;
+            tTimer: thread tTimer.impl;
+            tDoor: thread tDoor.impl;
+            systemStatus: data SystemStatus.impl;
+        
+        connections
+            -- User Command Handling
+            uiDevConn: port user_cmdIn -> tUI.user_input_in;
+            
+            -- Timer Control
+            ui_to_timer_start: port tUI.timer_control -> tTimer.start;
+            ui_to_timer_stop: port tUI.timer_control -> tTimer.stop;
+            timer_to_status: port tTimer.time_remaining -> systemStatus.remaining_time;
+            
+            -- Heater Control
+            status_to_heater: port systemStatus.power_level -> tHeater.power_setpoint;
+            heater_to_status_power: port tHeater.power_output -> systemStatus.power_level;
+            
+            -- Door Monitoring
+            door_to_status: port tDoor.status_out -> systemStatus.door_open;
+            door_emergency_stop: port tDoor.emergency -> tTimer.stop;
+            
+            -- System Outputs
+            status_to_ui: port systemStatus -> tUI.system_status;
+            mode_output: port systemStatus.operation_mode -> operation_mode;
+            power_output: port systemStatus.power_level -> heater_power;
+    end Controller.impl;
+	
+	processor corei5
+	    features
+	        eth: requires bus access ethernet;
+	    properties
+	        Scheduling_Protocol => (Round_Robin_Protocol);
+	        Clock_Period => 1ms;
+	end corei5;
+	
+	system MicrowaveSystem
+	end MicrowaveSystem;
+	
+	system implementation MicrowaveSystem.impl
+        subcomponents
+            ui_dev: device UI.impl;
+            heater_dev: device Heater.impl;
+            timer_dev: device Timer.Impl;
+            door_dev: device Door_Sensor.impl;
+            controller_proc: process Controller.impl;
+            cpu: processor corei5;
+            Mag_bus: bus ethernet;
+			Stand_Memory: memory RAM.Standard;
+        
+        connections
+            -- Device to Controller connections
+            
+            -- Controller to Device connections
+            heater_power_conn: port controller_proc.heater_power -> heater_dev.power_setpoint;
+            timer_value_conn: port controller_proc.timer_value -> timer_dev.time_set;
+            
+            -- Status connections
+            emergency_conn: port door_dev.emergency_stop -> controller_proc.tDoor.emergency;
+            status_conn: port controller_proc.systemStatus -> ui_dev.system_status;
+            
+            -- Timer control
+            timer_start_conn: port ui_dev.timer_control -> timer_dev.start;
+            
+            -- Bus access connections
+            eth1: bus access ui_dev.BA1 -> Mag_bus;
+            eth2: bus access heater_dev.BA1 -> Mag_bus;
+            eth3: bus access timer_dev.BA1 -> Mag_bus;
+            eth4: bus access door_dev.BA1 -> Mag_bus;
+            BAC5: bus access Stand_Memory.BA1 <-> Mag_bus;
+            ethProc: bus access cpu.eth <-> Mag_bus;
+        
+        properties
+            Actual_Connection_Binding => (reference(mag_bus)) applies to ba_ui;
+            Actual_Connection_Binding => (reference(mag_bus)) applies to ba_heater;
+            Actual_Connection_Binding => (reference(mag_bus)) applies to ba_timer;
+            Actual_Connection_Binding => (reference(mag_bus)) applies to ba_door;
+            Actual_Connection_Binding => (reference(mag_bus)) applies to ba_controller;
+            Actual_Connection_Binding => (reference(mag_bus)) applies to ba_cpu;
+            Actual_Memory_Binding => (reference(stand_memory)) applies to controller_proc;
+            Actual_Memory_Binding => (reference(stand_memory)) applies to ui_dev;
+            Actual_Memory_Binding => (reference(stand_memory)) applies to heater_dev;
+            Actual_Memory_Binding => (reference(stand_memory)) applies to timer_dev;
+            Actual_Memory_Binding => (reference(stand_memory)) applies to door_dev;
+            Actual_Memory_Binding => (reference(stand_memory)) applies to cpu;
+    end MicrowaveSystem.impl;
+
+end MicrowaveSystem;

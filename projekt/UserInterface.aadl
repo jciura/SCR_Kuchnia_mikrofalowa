@@ -1,0 +1,53 @@
+package UserInterface
+public
+    with Common_Types;
+
+    device UI
+        features
+            user_input: in event data port Common_Types::UserCommand;
+            system_status: in data port Common_Types::Status;
+            display_output: out event data port Common_Types::DisplayData;
+            timer_control: out event port;
+            BA1: requires bus access Common_Types::ethernet;
+    end UI;
+
+    thread tUI
+        features
+            user_input: in event data port Common_Types::UserCommand;
+            system_status: in data port Common_Types::Status;
+            display_output: out event data port Common_Types::DisplayData;
+            timer_control: out event port;
+        properties
+            Dispatch_Protocol => Periodic;
+            Period => 20 ms;
+    end tUI;
+
+    thread implementation tUI.impl
+    end tUI.impl;
+
+    process UIProcess
+        features
+            user_input: in event data port Common_Types::UserCommand;
+            system_status: in data port Common_Types::Status;
+            display_output: out event data port Common_Types::DisplayData;
+            timer_control: out event port;
+    end UIProcess;
+
+    process implementation UIProcess.impl
+        subcomponents
+            tUI: thread tUI.impl;
+        connections
+            input_conn: port user_input -> tUI.user_input;
+            status_conn: port system_status -> tUI.system_status;
+            display_conn: port tUI.display_output -> display_output;
+            timer_conn: port tUI.timer_control -> timer_control;
+    end UIProcess.impl;
+
+    processor UIProcessor
+        features
+            eth: requires bus access Common_Types::ethernet;
+        properties
+            Clock_Period => 1 ms;
+    end UIProcessor;
+
+end UserInterface;
