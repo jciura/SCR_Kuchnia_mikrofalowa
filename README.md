@@ -61,10 +61,11 @@ Zawiera stworzone typy danych, magistrale i pamięć
 
 | Nazwa         | Opis                                                                 |
 |---------------|----------------------------------------------------------------------|
-| `Door_Sensor` | Czujnik drzwi – status drzwi i sygnał awaryjnego zatrzymania.        |
+| `Door` | Czujnik drzwi – status drzwi i sygnał awaryjnego zatrzymania.        |
+`Button` | Wejście użytkownika - czas, moc, tryb.        |
 | `Timer`       | Obsługa czasu grzania – start, stop, timeout, pauza.                |
 | `Heater`      | Urządzenie grzewcze – przyjmuje moc i zwraca faktyczną moc.         |
-| `UI`          | Interfejs użytkownika – polecenia wejściowe i wyświetlanie statusu. |                                 
+| `Screen`          | Wyświetlanie statusu. |                                 
 
 ---
 
@@ -73,10 +74,9 @@ Zawiera stworzone typy danych, magistrale i pamięć
 
 | Nazwa     | Opis                                                                  |
 |-----------|-----------------------------------------------------------------------|
-| `tDoor`   | Obsługuje status drzwi i sygnały awaryjne.                           |
 | `tTimer`  | Zarządza czasem pracy grzania.                                       |
 | `tHeater` | Ustawia i odczytuje faktyczną moc grzania.                           |
-| `tUI`     | Przyjmuje polecenia użytkownika i steruje pracą timera.             |
+| `tCtl`     |Kontroler, który zarządza wszystkim.            |
 
 ---
 
@@ -104,7 +104,7 @@ Zawiera stworzone typy danych, magistrale i pamięć
 
 
 ## Model - rysunek
-
+![Schemat mikrofalówki](schemat.png)
 
 ---
 
