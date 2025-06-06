@@ -1,4 +1,5 @@
 
+
 # Kuchnia mikrofalowa
 
 ---
@@ -50,10 +51,9 @@ Zawiera stworzone typy danych, magistrale i pamięć
 |------------------------|----------------------------------------------------------------------|
 | `HeatPower`            | Zakres mocy grzania od 0 do 100.                                     |
 | `OperationMode`        | Tryby pracy: `OFF`, `HEATING`, `DEFROST`, `GRILL`.       |
-| `UserCommand` | Dane wejściowe: tryb, moc, czas, sygnał start/stop.                 |
-| `SystemStatus`| Dane wyjściowe: tryb, moc, drzwi, czas, moc aktualna, komunikaty. 
-| `RAM`         		 | Pamięć używana przez urządzenia i procesor.   	
-| `ethernet` 			 | Reprezentuje magistralę komunikacyjną (np. Ethernet). |
+| `Status`| Status pracy; wartości: START, STOP, PAUSE. 
+| `UserCommand` | Dane wejściowe: status, tryb, moc, czas.                |
+| `BuzzerVar`         		 | Sterowanie sygnałem dźwiękowym.	
 
 ---
 
@@ -63,9 +63,9 @@ Zawiera stworzone typy danych, magistrale i pamięć
 |---------------|----------------------------------------------------------------------|
 | `Door` | Czujnik drzwi – status drzwi i sygnał awaryjnego zatrzymania.        |
 `Button` | Wejście użytkownika - czas, moc, tryb.        |
-| `Timer`       | Obsługa czasu grzania – start, stop, timeout, pauza.                |
 | `Heater`      | Urządzenie grzewcze – przyjmuje moc i zwraca faktyczną moc.         |
-| `Screen`          | Wyświetlanie statusu. |                                 
+| `Screen`          | Wyświetlanie statusu. |            
+| `Buzzer`       | Sygnał dźwiękowy przy zakończeniu pracy.                |                     
 
 ---
 
@@ -76,11 +76,12 @@ Zawiera stworzone typy danych, magistrale i pamięć
 |-----------|-----------------------------------------------------------------------|
 | `tTimer`  | Zarządza czasem pracy grzania.                                       |
 | `tHeater` | Ustawia i odczytuje faktyczną moc grzania.                           |
+| `tBuzzer` | Odbiera od kontrolera informacje czy włączyć sygnał dźwiękowy.                        |
 | `tCtl`     |Kontroler, który zarządza wszystkim.            |
 
 ---
 
-### Process
+### Procesy
 
 | Nazwa             | Opis                                                                 |
 |-------------------|----------------------------------------------------------------------|
@@ -88,11 +89,13 @@ Zawiera stworzone typy danych, magistrale i pamięć
 
 ---
 
-###  Processor
+###  Zasoby systemowe
 
 | Nazwa    | Opis                                                                    |
 |----------|-------------------------------------------------------------------------|
-| `corei5` | Procesor wykonujący wątki – planowanie Round Robin, okres zegara 1ms.  |
+| `corei5` | Procesor wykonujący wątki.  |
+| `RAM` | Pamięć  |
+| `ethernet` | Magistrala |
 
 ---
 
@@ -109,9 +112,51 @@ Zawiera stworzone typy danych, magistrale i pamięć
 ---
 
 ## Wyniki przeprowadzonych analiz
+### 1. Analiza czasowa
+![Analiza czasowa](analizaczasowa.png)
+
+| Wątek| Period| Deadline| Execution Time|
+|-----------|-------------------------------------------------------|------------------------------------|---------------|
+| `tCtl`  |20s | 15s | 2-4 ms|
+| `tHeater` | 50ms           | -             | 2-5 ms|
+| `tTimer` | 1s| -| 1-2 ms|
+
+
+Całkowita wymagana moc obliczeniowa nie przekracza specyfikacji procesora (3 MIPS)
+    
+
+### 2. Binding Constraints
+![Analiza bindingów](bindingconstraints.png)
+    
+
+### 3. Analiza wag
+![Analiza wag](wagi.png)
+
+Wagi urządzeń nie przekraczają limitu 10 kg
+
+### 4. Not Bound Resource Budget
+![Analiza not bound](notbound.png)
+
+
+### 5. Bound Resource Budget
+![Analiza bound](bound.png)
+
+### 6. Weryfikacja bezpieczeństwa
+
+-   Wszystkie komponenty krytyczne oznaczone  `SafetyCriticality => 2`
+    
+-   Mechanizm zatrzymania przy otwartych drzwiach
+    
+-   Separacja wątków sterujących
 
 ---
 
-## Inne informacje zależne od tematu
+## Wnioski
 
----
+1. Model poprawnie odwzorowuje działanie kuchenki mikrofalowej
+        
+2. System spełnia założenia dotyczące poboru mocy i wagi
+    
+3. Architektura zapewnia odpowiedni poziom bezpieczeństwa
+   
+
