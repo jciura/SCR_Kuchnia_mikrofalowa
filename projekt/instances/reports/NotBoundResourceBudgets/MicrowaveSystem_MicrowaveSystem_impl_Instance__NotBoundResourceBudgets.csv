@@ -1,0 +1,29 @@
+Not Bound Resource Budget Analysis Report
+
+Resource Summary: 
+  MIPS capacity 3,000 MIPS : MIPS budget 0,319 MIPS
+  1 out of 1 with MIPS capacity
+  5 out of 5 with MIPS budget
+
+
+
+Detailed Processor MIPS Capacity Report 
+
+Component,Capacity
+processor cpu, 3,000 MIPS,
+Total, 3,000 MIPS,
+
+
+Detailed MIPS Budget Report 
+
+Component,Budget,Actual,Notes
+device thisButton, 0,000 MIPS,0,000 MIPS,
+device thisDoor, 0,000 MIPS,0,000 MIPS,
+device thisScreen, 0,000 MIPS,0,000 MIPS,
+device thisBuzzer, 0,000 MIPS,0,000 MIPS,
+  thread thisCtlProc.tCtl,   1,500 MIPS,  0,001 MIPS,thread MicrowaveSystem_impl_Instance.thisCtlProc.tCtl total 0,001 MIPS below budget 1,500 MIPS (100,0 % slack)
+  thread thisCtlProc.tHeater,   1,200 MIPS,  0,300 MIPS,thread MicrowaveSystem_impl_Instance.thisCtlProc.tHeater total 0,300 MIPS below budget 1,200 MIPS (75,0 % slack)
+  thread thisCtlProc.tTimer,   0,800 MIPS,  0,006 MIPS,thread MicrowaveSystem_impl_Instance.thisCtlProc.tTimer total 0,006 MIPS below budget 0,800 MIPS (99,3 % slack)
+  thread thisCtlProc.tBuzzer,   0,400 MIPS,  0,012 MIPS,thread MicrowaveSystem_impl_Instance.thisCtlProc.tBuzzer total 0,012 MIPS below budget 0,400 MIPS (97,0 % slack)
+process thisCtlProc, 0,800 MIPS,0,319 MIPS,process MicrowaveSystem_impl_Instance.thisCtlProc total 0,319 MIPS below budget 0,800 MIPS (60,2 % slack)
+Total, ,0,319 MIPS,

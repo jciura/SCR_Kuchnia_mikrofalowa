@@ -62,7 +62,7 @@ public
 	        BA1: requires bus access ethernet;
 	    properties
 	        SEI::GrossWeight => 0.05 kg;
-	        SEI::PowerCapacity => 2.0 mW;
+	        SEI::PowerCapacity => 2.0 W;
 	end Button;
 
 	device implementation Button.impl
@@ -290,7 +290,11 @@ public
 			Actual_Memory_Binding => (reference(Stand_Memory)) applies to thisDoor;
 			Actual_Memory_Binding => (reference(Stand_Memory)) applies to thisScreen;
 			Actual_Memory_Binding => (reference(Stand_Memory)) applies to thisBuzzer;
-	            
+			
+			Actual_Processor_Binding => (reference(cpu)) applies to thisCtlProc.tCtl;
+			Actual_Processor_Binding => (reference(cpu)) applies to thisCtlProc.tHeater;
+			Actual_Processor_Binding => (reference(cpu)) applies to thisCtlProc.tTimer;
+			Actual_Processor_Binding => (reference(cpu)) applies to thisCtlProc.tBuzzer;
 					
 	end MicrowaveSystem.impl;
 

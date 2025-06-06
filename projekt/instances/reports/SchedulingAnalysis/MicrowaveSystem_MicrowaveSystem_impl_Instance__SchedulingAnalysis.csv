@@ -1,0 +1,18 @@
+Test scheduability Report
+
+Processor Utilization/Scheduling Results
+Schedulability Results
+cpu: Processor MicrowaveSystem_impl_Instance.cpu is schedulable with utilization 10.6%
+thread name, period, deadline, execution time, phase offset, priority, max response time, schedulability 
+MicrowaveSystem_impl_Instance.thisCtlProc.tHeater, 50000, 50000, 5000, 0, 4, 5000.0, true
+MicrowaveSystem_impl_Instance.thisCtlProc.tBuzzer, 500000, 500000, 2000, 0, 3, 7000.0, true
+MicrowaveSystem_impl_Instance.thisCtlProc.tTimer, 1000000, 1000000, 2000, 0, 2, 9000.0, true
+MicrowaveSystem_impl_Instance.thisCtlProc.tCtl, 20000000, 15000, 4000, 0, 1, 13000.0, true
+
+
+
+Thread binding report
+thread thisCtlProc.tCtl(0,001 MIPS) ==> processor cpu(3,00MIPS) Utilization 0,0%
+thread thisCtlProc.tHeater(0,300 MIPS) ==> processor cpu(3,00MIPS) Utilization 10,0%
+thread thisCtlProc.tTimer(0,006 MIPS) ==> processor cpu(3,00MIPS) Utilization 0,2%
+thread thisCtlProc.tBuzzer(0,012 MIPS) ==> processor cpu(3,00MIPS) Utilization 0,4%

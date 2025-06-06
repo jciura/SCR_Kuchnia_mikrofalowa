@@ -1,0 +1,18 @@
+Bound Resource Budget Analysis Report
+
+
+Processor Summary Report: 
+  Processor cpu: Total MIPS 0,319 MIPS of bound tasks within MIPS capacity 3,000 MIPS of cpu
+
+Memory Summary Report: 
+  No Memory with Memory_Size or RAMCapacity or ROMCapacity
+
+
+Detailed Workload Report:  for Processor cpu with Capacity 3,000 MIPS
+
+Component,Budget,Actual
+thread thisCtlProc.tCtl, 1,500 MIPS,0,001 MIPS,thread MicrowaveSystem_impl_Instance.thisCtlProc.tCtl total 0,001 MIPS below budget 1,500 MIPS (100,0 % slack)
+thread thisCtlProc.tHeater, 1,200 MIPS,0,300 MIPS,thread MicrowaveSystem_impl_Instance.thisCtlProc.tHeater total 0,300 MIPS below budget 1,200 MIPS (75,0 % slack)
+thread thisCtlProc.tTimer, 0,800 MIPS,0,006 MIPS,thread MicrowaveSystem_impl_Instance.thisCtlProc.tTimer total 0,006 MIPS below budget 0,800 MIPS (99,3 % slack)
+thread thisCtlProc.tBuzzer, 0,400 MIPS,0,012 MIPS,thread MicrowaveSystem_impl_Instance.thisCtlProc.tBuzzer total 0,012 MIPS below budget 0,400 MIPS (97,0 % slack)
+Total,,0,319 MIPS

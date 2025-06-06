@@ -29,7 +29,7 @@
     <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
       <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.PowerCapacity"/>
       <ownedValue>
-        <ownedValue xsi:type="aadl2:RealLiteral" value="2000.0">
+        <ownedValue xsi:type="aadl2:RealLiteral" value="1000.0">
           <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.5/@ownedLiteral.1"/>
         </ownedValue>
       </ownedValue>
@@ -84,15 +84,6 @@
         </ownedValue>
         <propertyAssociation href="../MicrowaveSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.2"/>
       </ownedPropertyAssociation>
-      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-        <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.BandWidthBudget"/>
-        <ownedValue>
-          <ownedValue xsi:type="aadl2:RealLiteral" value="200.0">
-            <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.17/@ownedLiteral.5"/>
-          </ownedValue>
-        </ownedValue>
-        <propertyAssociation href="../MicrowaveSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.3"/>
-      </ownedPropertyAssociation>
       <subcomponent xsi:type="aadl2:BusSubcomponent" href="../MicrowaveSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedBusSubcomponent.0"/>
       <index>0</index>
       <classifier xsi:type="aadl2:BusType" href="../MicrowaveSystem.aadl#MicrowaveSystem.ethernet"/>
@@ -101,8 +92,8 @@
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.PowerCapacity"/>
         <ownedValue>
-          <ownedValue xsi:type="aadl2:RealLiteral" value="500.0">
-            <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.5/@ownedLiteral.0"/>
+          <ownedValue xsi:type="aadl2:RealLiteral" value="2.0">
+            <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.5/@ownedLiteral.1"/>
           </ownedValue>
         </ownedValue>
         <propertyAssociation href="../MicrowaveSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.9/@ownedPropertyAssociation.1"/>
@@ -148,8 +139,8 @@
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.PowerCapacity"/>
         <ownedValue>
-          <ownedValue xsi:type="aadl2:RealLiteral" value="1000.0">
-            <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.5/@ownedLiteral.0"/>
+          <ownedValue xsi:type="aadl2:RealLiteral" value="30.0">
+            <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.5/@ownedLiteral.1"/>
           </ownedValue>
         </ownedValue>
         <propertyAssociation href="../MicrowaveSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.11/@ownedPropertyAssociation.1"/>
@@ -204,7 +195,7 @@
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.PowerCapacity"/>
         <ownedValue>
-          <ownedValue xsi:type="aadl2:RealLiteral" value="750.0">
+          <ownedValue xsi:type="aadl2:RealLiteral" value="50.0">
             <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.5/@ownedLiteral.0"/>
           </ownedValue>
         </ownedValue>
@@ -309,8 +300,8 @@
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.PowerCapacity"/>
         <ownedValue>
-          <ownedValue xsi:type="aadl2:RealLiteral" value="100.0">
-            <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.5/@ownedLiteral.0"/>
+          <ownedValue xsi:type="aadl2:RealLiteral" value="1.0">
+            <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.5/@ownedLiteral.1"/>
           </ownedValue>
         </ownedValue>
         <propertyAssociation href="../MicrowaveSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.17/@ownedPropertyAssociation.0"/>
@@ -525,6 +516,15 @@
             </ownedValue>
           </ownedValue>
           <propertyAssociation href="../MicrowaveSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedPropertyAssociation.21"/>
+        </ownedPropertyAssociation>
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:ListValue">
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.7"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../MicrowaveSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedPropertyAssociation.26"/>
         </ownedPropertyAssociation>
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Period"/>
@@ -817,6 +817,15 @@
           <propertyAssociation href="../MicrowaveSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedPropertyAssociation.21"/>
         </ownedPropertyAssociation>
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:ListValue">
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.7"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../MicrowaveSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedPropertyAssociation.27"/>
+        </ownedPropertyAssociation>
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Period"/>
           <ownedValue>
             <ownedValue xsi:type="aadl2:IntegerLiteral" value="50">
@@ -963,6 +972,15 @@
             </ownedValue>
           </ownedValue>
           <propertyAssociation href="../MicrowaveSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedPropertyAssociation.21"/>
+        </ownedPropertyAssociation>
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:ListValue">
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.7"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../MicrowaveSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedPropertyAssociation.28"/>
         </ownedPropertyAssociation>
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Period"/>
@@ -1126,6 +1144,15 @@
             </ownedValue>
           </ownedValue>
           <propertyAssociation href="../MicrowaveSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedPropertyAssociation.21"/>
+        </ownedPropertyAssociation>
+        <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+          <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
+          <ownedValue>
+            <ownedValue xsi:type="aadl2:ListValue">
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.7"/>
+            </ownedValue>
+          </ownedValue>
+          <propertyAssociation href="../MicrowaveSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.31/@ownedPropertyAssociation.29"/>
         </ownedPropertyAssociation>
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Period"/>
@@ -1335,7 +1362,7 @@
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Processor_Capacity"/>
         <ownedValue>
-          <ownedValue xsi:type="aadl2:RealLiteral" value="1.0">
+          <ownedValue xsi:type="aadl2:RealLiteral" value="3.0">
             <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.18/@ownedLiteral.1"/>
           </ownedValue>
         </ownedValue>
@@ -1488,15 +1515,6 @@
         </ownedValue>
       </ownedValue>
       <propertyAssociation href="../MicrowaveSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.2"/>
-    </ownedPropertyAssociation>
-    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.BandWidthBudget"/>
-      <ownedValue>
-        <ownedValue xsi:type="aadl2:RealLiteral" value="200.0">
-          <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.17/@ownedLiteral.5"/>
-        </ownedValue>
-      </ownedValue>
-      <propertyAssociation href="../MicrowaveSystem.aadl#/0/@ownedPublicSection/@ownedClassifier.0/@ownedPropertyAssociation.3"/>
     </ownedPropertyAssociation>
     <classifier xsi:type="aadl2:BusType" href="../MicrowaveSystem.aadl#MicrowaveSystem.ethernet"/>
   </instance:ComponentInstance>

@@ -22,8 +22,8 @@
         <seg>component_instance</seg>
         <seg>cpu</seg>
       </bo>
-      <position x="720.0" y="920.0"/>
-      <size width="134.56770706176758" height="60.0"/>
+      <position x="690.0000000000001" y="910.0"/>
+      <size width="135.0" height="60.0"/>
     </element>
     <element uuid="887aa41d-d7a8-493d-9b38-01fe508be0a8" manual="true">
       <bo>
@@ -32,7 +32,7 @@
         <seg>Mag_bus</seg>
       </bo>
       <position x="730.0" y="20.0"/>
-      <size width="106.85025787353516" height="35.0"/>
+      <size width="107.0" height="35.0"/>
     </element>
     <element uuid="7a57aa46-31a6-41af-84d2-efb92ded7dff" manual="true">
       <element uuid="738f162a-e87f-4d42-9f37-1a912112ba3d" manual="true" dockArea="left">
@@ -48,8 +48,8 @@
         <seg>component_instance</seg>
         <seg>Stand_Memory</seg>
       </bo>
-      <position x="930.0" y="920.0000000000001"/>
-      <size width="216.81378936767578" height="60.0"/>
+      <position x="930.0" y="920.0"/>
+      <size width="217.0" height="60.0"/>
     </element>
     <element uuid="fdd33c6b-8d7e-44ce-b47f-1fc72059661d" manual="true">
       <element uuid="7c29ec28-5c8f-4d07-b757-5c34c65224f3" manual="true" dockArea="left">
@@ -73,7 +73,7 @@
           <seg>feature_instance</seg>
           <seg>userCmdOut</seg>
         </bo>
-        <position x="198.8762969970703" y="10.0"/>
+        <position x="198.42057037353516" y="10.0"/>
       </element>
       <element uuid="f9f50865-b182-439f-97b5-af149b7ba65c" manual="true">
         <bo>
@@ -87,8 +87,8 @@
         <seg>component_instance</seg>
         <seg>thisButton</seg>
       </bo>
-      <position x="23.145835876464844" y="134.66666666666669"/>
-      <size width="286.45572662353516" height="60.0"/>
+      <position x="23.0" y="135.0"/>
+      <size width="286.0" height="60.0"/>
     </element>
     <element uuid="a24e5497-e7ce-4052-a97e-85839ef7fd3d" manual="true">
       <element uuid="03160672-0c96-495b-bc59-b59c76d97698" manual="true" dockArea="left">
@@ -118,8 +118,8 @@
         <seg>component_instance</seg>
         <seg>thisBuzzer</seg>
       </bo>
-      <position x="1760.0" y="60.000000000000014"/>
-      <size width="292.3736877441406" height="60.0"/>
+      <position x="1760.0" y="60.0"/>
+      <size width="292.0" height="60.0"/>
     </element>
     <element uuid="b7f2121f-0fee-4a98-bc34-eec317037d65" manual="true">
       <element uuid="77e93b61-469a-46e6-b7fb-ef80d72292d9" manual="true">
@@ -151,7 +151,7 @@
             <seg>feature_instance</seg>
             <seg>onBuzzerOut</seg>
           </bo>
-          <position x="187.02083587646484" y="10.000000000000014"/>
+          <position x="187.1809844970703" y="10.0"/>
         </element>
         <element uuid="4a29e7b8-d2bf-4e17-972d-ee531dc945ed" manual="true">
           <bo>
@@ -160,13 +160,20 @@
             <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
           </bo>
         </element>
+        <element uuid="057da30e-2301-4ba9-a039-6aefd61a5ee9" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Processor_Binding</seg>
+            <seg>24a88b75-d4fc-4cb5-92e6-b627a604e17a</seg>
+          </bo>
+        </element>
         <bo>
           <seg>org.osate.ge.diagrams.instance</seg>
           <seg>component_instance</seg>
           <seg>tBuzzer</seg>
         </bo>
-        <position x="870.0" y="9.999999999999986"/>
-        <size width="276.83985137939453" height="110.0"/>
+        <position x="870.0" y="10.0"/>
+        <size width="277.0" height="110.0"/>
       </element>
       <element uuid="caaa748c-9bbc-4a51-b9a2-0c4ed25af5d8" manual="true">
         <element uuid="35024146-9947-4389-b46e-e1b009fd70a7" manual="true" dockArea="right">
@@ -287,7 +294,7 @@
             <seg>feature_instance</seg>
             <seg>userCmdIn</seg>
           </bo>
-          <position y="30.000000000000057"/>
+          <position y="30.0"/>
         </element>
         <element uuid="477e3591-0af0-446d-bbf7-0fe548da5249" manual="true">
           <bo>
@@ -296,12 +303,19 @@
             <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
           </bo>
         </element>
+        <element uuid="2999200d-8c88-4db3-a49a-b2e02c6d8ec5" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Processor_Binding</seg>
+            <seg>24a88b75-d4fc-4cb5-92e6-b627a604e17a</seg>
+          </bo>
+        </element>
         <bo>
           <seg>org.osate.ge.diagrams.instance</seg>
           <seg>component_instance</seg>
           <seg>tCtl</seg>
         </bo>
-        <position x="170.0" y="89.99999999999999"/>
+        <position x="170.0" y="90.0"/>
         <size width="470.0" height="600.0"/>
       </element>
       <element uuid="e5b53147-3cde-4c69-bca4-e130fd929ace" manual="true">
@@ -348,7 +362,7 @@
             <seg>feature_instance</seg>
             <seg>powerOut</seg>
           </bo>
-          <position x="250.06122207641602" y="60.000000000000114"/>
+          <position x="250.19401168823242" y="60.0"/>
         </element>
         <element uuid="6b3cbf60-d68e-43d8-ab4e-275d4ab21b08" manual="true">
           <bo>
@@ -357,13 +371,20 @@
             <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
           </bo>
         </element>
+        <element uuid="1b955212-57ce-4b18-a6a6-e4e6e6251b89" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Processor_Binding</seg>
+            <seg>24a88b75-d4fc-4cb5-92e6-b627a604e17a</seg>
+          </bo>
+        </element>
         <bo>
           <seg>org.osate.ge.diagrams.instance</seg>
           <seg>component_instance</seg>
           <seg>tHeater</seg>
         </bo>
         <position x="880.0" y="610.0"/>
-        <size width="319.8672103881836" height="160.0"/>
+        <size width="320.0" height="160.0"/>
       </element>
       <element uuid="52c0f617-5b37-4b25-b8fc-62fb00a41181" manual="true">
         <element uuid="dfca5c25-f3ba-4495-b038-300d6e02a327" manual="true" dockArea="left">
@@ -418,13 +439,20 @@
             <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
           </bo>
         </element>
+        <element uuid="4630b75b-c187-4a86-b559-9ba25188c23a" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Processor_Binding</seg>
+            <seg>24a88b75-d4fc-4cb5-92e6-b627a604e17a</seg>
+          </bo>
+        </element>
         <bo>
           <seg>org.osate.ge.diagrams.instance</seg>
           <seg>component_instance</seg>
           <seg>tTimer</seg>
         </bo>
         <position x="860.0" y="180.0"/>
-        <size width="318.34376525878906" height="160.0"/>
+        <size width="318.0" height="160.0"/>
       </element>
       <element uuid="f84b59c5-7b41-4123-bd7b-bd3eb8fa7588" manual="true">
         <element uuid="32920dad-3683-4d52-b454-68c21ba4b445" manual="true">
@@ -523,7 +551,7 @@
           <seg>feature_instance</seg>
           <seg>currentTimeOut</seg>
         </bo>
-        <position x="1185.78125" y="360.0"/>
+        <position x="1185.3828125" y="360.0"/>
       </element>
       <element uuid="5487a377-534e-477a-a9c3-786385da6a92" manual="true" dockArea="left">
         <element uuid="b0bec7cc-dff5-4671-b45f-1ff8fc2e79b6" manual="true">
@@ -538,7 +566,7 @@
           <seg>feature_instance</seg>
           <seg>doorStatusIn</seg>
         </bo>
-        <position y="93.33333333333334"/>
+        <position y="93.0"/>
       </element>
       <element uuid="2f60ded8-40e8-428e-b66d-3d7374d1bea1" manual="true" dockArea="right">
         <element uuid="923f4b1f-6772-42da-9c0e-bcda474eebc8" manual="true">
@@ -553,7 +581,7 @@
           <seg>feature_instance</seg>
           <seg>onBuzzer</seg>
         </bo>
-        <position x="1222.0703125" y="10.0"/>
+        <position x="1221.671875" y="10.0"/>
       </element>
       <element uuid="c5ce3a23-379d-488d-9d38-c8e09fe3d57d" manual="true" dockArea="right">
         <element uuid="dc843abc-2bad-47be-811b-e33861e92a5c" manual="true">
@@ -568,7 +596,7 @@
           <seg>feature_instance</seg>
           <seg>powerOut</seg>
         </bo>
-        <position x="1220.5924491882324" y="720.0000000000001"/>
+        <position x="1220.1940116882324" y="720.0"/>
       </element>
       <element uuid="32be337e-4c18-4a66-a54d-fd96ef9d8a60" manual="true" dockArea="left">
         <element uuid="b721ebf7-a2b7-4966-b227-2bcb165bf583" manual="true">
@@ -583,7 +611,7 @@
           <seg>feature_instance</seg>
           <seg>userCmdIn</seg>
         </bo>
-        <position y="26.666666666666668"/>
+        <position y="27.0"/>
       </element>
       <element uuid="b7b26ab1-1177-4ba3-90cd-00cbb944f61f" manual="true">
         <bo>
@@ -604,8 +632,8 @@
         <seg>component_instance</seg>
         <seg>thisCtlProc</seg>
       </bo>
-      <position x="350.0" y="70.00000000000001"/>
-      <size width="1290.3984375" height="792.0"/>
+      <position x="350.0" y="70.0"/>
+      <size width="1290.0" height="792.0"/>
     </element>
     <element uuid="f3cda80a-b92a-4079-af89-fff268b7d1ff" manual="true">
       <element uuid="897e77a6-f0ce-4759-a4cc-2e465db221ec" manual="true" dockArea="left">
@@ -629,7 +657,7 @@
           <seg>feature_instance</seg>
           <seg>doorStatusOut</seg>
         </bo>
-        <position x="199.625" y="15.333333333333314"/>
+        <position x="200.0234375" y="15.0"/>
       </element>
       <element uuid="eb294d38-c4ce-4e93-bea4-a7b1eff4b2df" manual="true">
         <bo>
@@ -643,8 +671,8 @@
         <seg>component_instance</seg>
         <seg>thisDoor</seg>
       </bo>
-      <position x="12.0" y="214.66666666666669"/>
-      <size width="297.6015625" height="60.0"/>
+      <position x="12.0" y="215.0"/>
+      <size width="298.0" height="60.0"/>
     </element>
     <element uuid="c00eca81-3095-4b43-81db-44783d54eb44" manual="true">
       <element uuid="520c566c-2695-43e7-b5a2-a4d3c1aa9d51" manual="true" dockArea="left">
@@ -697,8 +725,8 @@
         <seg>component_instance</seg>
         <seg>thisScreen</seg>
       </bo>
-      <position x="1710.0" y="790.0000000000001"/>
-      <size width="337.5885543823242" height="160.0"/>
+      <position x="1710.0" y="790.0"/>
+      <size width="338.0" height="160.0"/>
     </element>
     <element uuid="b12a10f9-2c2e-4646-90cb-017985de4619" manual="true">
       <element uuid="9da1cabe-da68-4826-be45-0885e8e9793f" manual="true">
@@ -756,8 +784,8 @@
         <seg>doorConn : MicrowaveSystem_impl_Instance.thisDoor.doorStatusOut -> MicrowaveSystem_impl_Instance.thisCtlProc.doorStatusIn</seg>
       </bo>
       <bendpoints>
-        <point x="39.6015625" y="216.66661071777344"/>
-        <point x="39.6015625" y="203.3333282470703"/>
+        <point x="40.0" y="217.00001525878906"/>
+        <point x="40.0" y="203.00001525878906"/>
       </bendpoints>
     </element>
     <element uuid="521bced2-47be-4c2a-8e15-b134f4a72353" manual="true">
@@ -853,11 +881,12 @@
       <seg>/projekt/instances/microwavesystem_microwavesystem_impl_instance.aaxl2</seg>
     </bo>
     <position x="-280.0" y="-40.0"/>
-    <size width="2090.0" height="989.9999999999999"/>
+    <size width="2090.0" height="990.0"/>
   </element>
   <config type="structure" connectionPrimaryLabelsVisible="false">
     <enabledAadlProperties>
       <property>deployment_properties::actual_memory_binding</property>
+      <property>deployment_properties::actual_processor_binding</property>
       <property>deployment_properties::actual_connection_binding</property>
     </enabledAadlProperties>
     <context>

@@ -1,0 +1,10 @@
+Weight totals Report
+
+Warning! Mag_bus: [L] No net weight plus subcomponent weight or no gross weight
+thisButton: [L] Sum of weights / gross weight is 0,050 kg (no limit specified)
+thisDoor: [L] Sum of weights / gross weight is 1,500 kg (no limit specified)
+thisScreen: [L] Sum of weights / gross weight is 1,000 kg (no limit specified)
+Warning! thisBuzzer: [L] No net weight plus subcomponent weight or no gross weight
+Stand_Memory: [L] Sum of weights / gross weight is 0,100 kg (no limit specified)
+Warning! cpu: [L] No net weight plus subcomponent weight or no gross weight
+MicrowaveSystem_impl_Instance: [A] Sum of weights (2,650 kg) is below weight limit of 10,000 kg (73,5 % Weight slack)

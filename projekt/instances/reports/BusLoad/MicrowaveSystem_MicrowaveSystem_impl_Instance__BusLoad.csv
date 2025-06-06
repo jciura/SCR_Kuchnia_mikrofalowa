@@ -1,0 +1,56 @@
+Bus load analysis of MicrowaveSystem_impl_Instance
+
+
+"Physical Bus","Capacity (KB/s)","Budget (KB/s)","Required Budget (KB/s)","Actual (KB/s)"
+"Mag_bus","100000.0","0.0","0.0","0.008199999999999999"
+
+"Bus Mag_bus has data overhead of 0 bytes"
+"Bound Virtual Bus/Connection","Capacity (KB/s)","Budget (KB/s)","Required Budget (KB/s)","Actual (KB/s)"
+"tCtl.powerOut -> tHeater.powerIn","","0.0","","0.0"
+"tCtl.operationModeOut -> tHeater.operationModeIn","","0.0","","0.0"
+"tCtl.startTimeOut -> tTimer.timeIn","","0.0","","2.0E-4"
+"tCtl.onBuzzer -> tBuzzer.onBuzzerIn","","0.0","","0.0"
+"tCtl.startStopPauseOut -> tTimer.startStopPauseIn","","0.0","","0.0"
+"tTimer.timeOut -> tCtl.currentTimeIn","","0.0","","0.004"
+"thisButton.userCmdOut -> thisCtlProc.tCtl.userCmdIn","","0.0","","0.0"
+"thisDoor.doorStatusOut -> thisCtlProc.tCtl.doorStatusIn","","0.0","","0.0"
+"thisCtlProc.tHeater.powerOut -> thisScreen.currentPowerIn","","0.0","","0.0"
+"thisCtlProc.tTimer.timeOut -> thisScreen.remainingTimeIn","","0.0","","0.004"
+"thisCtlProc.tBuzzer.onBuzzerOut -> thisBuzzer.OnOffBuzzer","","0.0","","0.0"
+
+"WARNING: Bus Mag_bus has no bandwidth budget"
+
+"Connection tCtl.powerOut -> tHeater.powerIn bound to Mag_bus"
+"WARNING: Connection tCtl.powerOut -> tHeater.powerIn has no bandwidth budget"
+
+"Connection tCtl.operationModeOut -> tHeater.operationModeIn bound to Mag_bus"
+"WARNING: Connection tCtl.operationModeOut -> tHeater.operationModeIn has no bandwidth budget"
+
+"Connection tCtl.startTimeOut -> tTimer.timeIn bound to Mag_bus"
+"WARNING: Connection tCtl.startTimeOut -> tTimer.timeIn has no bandwidth budget"
+
+"Connection tCtl.onBuzzer -> tBuzzer.onBuzzerIn bound to Mag_bus"
+"WARNING: Connection tCtl.onBuzzer -> tBuzzer.onBuzzerIn has no bandwidth budget"
+
+"Connection tCtl.startStopPauseOut -> tTimer.startStopPauseIn bound to Mag_bus"
+"WARNING: Connection tCtl.startStopPauseOut -> tTimer.startStopPauseIn has no bandwidth budget"
+
+"Connection tTimer.timeOut -> tCtl.currentTimeIn bound to Mag_bus"
+"WARNING: Connection tTimer.timeOut -> tCtl.currentTimeIn has no bandwidth budget"
+
+"Connection thisButton.userCmdOut -> thisCtlProc.tCtl.userCmdIn bound to Mag_bus"
+"WARNING: Connection thisButton.userCmdOut -> thisCtlProc.tCtl.userCmdIn has no bandwidth budget"
+
+"Connection thisDoor.doorStatusOut -> thisCtlProc.tCtl.doorStatusIn bound to Mag_bus"
+"WARNING: Connection thisDoor.doorStatusOut -> thisCtlProc.tCtl.doorStatusIn has no bandwidth budget"
+
+"Connection thisCtlProc.tHeater.powerOut -> thisScreen.currentPowerIn bound to Mag_bus"
+"WARNING: Connection thisCtlProc.tHeater.powerOut -> thisScreen.currentPowerIn has no bandwidth budget"
+
+"Connection thisCtlProc.tTimer.timeOut -> thisScreen.remainingTimeIn bound to Mag_bus"
+"WARNING: Connection thisCtlProc.tTimer.timeOut -> thisScreen.remainingTimeIn has no bandwidth budget"
+
+"Connection thisCtlProc.tBuzzer.onBuzzerOut -> thisBuzzer.OnOffBuzzer bound to Mag_bus"
+"WARNING: Connection thisCtlProc.tBuzzer.onBuzzerOut -> thisBuzzer.OnOffBuzzer has no bandwidth budget"
+
+
