@@ -1,0 +1,54 @@
+--package Heater
+--public
+--    with Common_Types;
+--    with Base_Types;
+--
+--    device Heater
+--        features
+--            power_setpoint: in data port Common_Types::HeatPower;
+--            current_temp: in data port Base_Types::Float;
+--            power_output: out data port Common_Types::HeatPower;
+--            BA1: requires bus access Common_Types::ethernet;
+--    end Heater;
+--
+--    device implementation Heater.impl
+--    end Heater.impl;
+--
+--    thread tHeater
+--        features
+--            power_setpoint: in data port Common_Types::HeatPower;
+--            current_temp: in data port Base_Types::Float;
+--            power_output: out data port Common_Types::HeatPower;
+--        properties
+--            Dispatch_Protocol => Periodic;
+--            Period => 50 ms;
+--            Compute_Execution_Time => 2 ms .. 5 ms;
+--    end tHeater;
+--
+--    thread implementation tHeater.impl
+--    end tHeater.impl;
+--
+--    process HeaterProcess
+--        features
+--            power_in: in data port Common_Types::HeatPower;
+--            temp_in: in data port Base_Types::Float;
+--            power_out: out data port Common_Types::HeatPower;
+--    end HeaterProcess;
+--
+--    process implementation HeaterProcess.impl
+--        subcomponents
+--            tHeater: thread tHeater.impl;
+--        connections
+--            setpoint_conn: port power_in -> tHeater.power_setpoint;
+--            temp_conn: port temp_in -> tHeater.current_temp;
+--            output_conn: port tHeater.power_output -> power_out;
+--    end HeaterProcess.impl;
+--
+--    processor HeaterProcessor
+--        features
+--            eth: requires bus access Common_Types::ethernet;
+--        properties
+--            Clock_Period => 1 ms;
+--    end HeaterProcessor;
+--
+--end Heater;

@@ -1,0 +1,869 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="dbe2a8bc-3740-457b-8740-c866068171f2" manual="true">
+    <element uuid="24a88b75-d4fc-4cb5-92e6-b627a604e17a" manual="true">
+      <element uuid="62c03b72-0f82-410c-80f6-01474301aa4b" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>eth</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="89294e98-b72b-422f-aec4-8ce6621447bb" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+          <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>cpu</seg>
+      </bo>
+      <position x="720.0" y="920.0"/>
+      <size width="134.56770706176758" height="60.0"/>
+    </element>
+    <element uuid="887aa41d-d7a8-493d-9b38-01fe508be0a8" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>Mag_bus</seg>
+      </bo>
+      <position x="730.0" y="20.0"/>
+      <size width="106.85025787353516" height="35.0"/>
+    </element>
+    <element uuid="7a57aa46-31a6-41af-84d2-efb92ded7dff" manual="true">
+      <element uuid="738f162a-e87f-4d42-9f37-1a912112ba3d" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>BA1</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>Stand_Memory</seg>
+      </bo>
+      <position x="930.0" y="920.0000000000001"/>
+      <size width="216.81378936767578" height="60.0"/>
+    </element>
+    <element uuid="fdd33c6b-8d7e-44ce-b47f-1fc72059661d" manual="true">
+      <element uuid="7c29ec28-5c8f-4d07-b757-5c34c65224f3" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>BA1</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="74c167ad-6f9b-461e-9660-eb660f9bade7" manual="true" dockArea="right">
+        <element uuid="420bd8ee-5a97-45b0-bd80-b9367679a5dd" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+            <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>userCmdOut</seg>
+        </bo>
+        <position x="198.8762969970703" y="10.0"/>
+      </element>
+      <element uuid="f9f50865-b182-439f-97b5-af149b7ba65c" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+          <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>thisButton</seg>
+      </bo>
+      <position x="23.145835876464844" y="134.66666666666669"/>
+      <size width="286.45572662353516" height="60.0"/>
+    </element>
+    <element uuid="a24e5497-e7ce-4052-a97e-85839ef7fd3d" manual="true">
+      <element uuid="03160672-0c96-495b-bc59-b59c76d97698" manual="true" dockArea="left">
+        <element uuid="99d14126-86cd-4d6b-8eac-c2becc2644b6" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+            <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>OnOffBuzzer</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="5abd1e8d-e445-494f-9d85-37d65871d7c0" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+          <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>thisBuzzer</seg>
+      </bo>
+      <position x="1760.0" y="60.000000000000014"/>
+      <size width="292.3736877441406" height="60.0"/>
+    </element>
+    <element uuid="b7f2121f-0fee-4a98-bc34-eec317037d65" manual="true">
+      <element uuid="77e93b61-469a-46e6-b7fb-ef80d72292d9" manual="true">
+        <element uuid="3a117973-d597-499b-914b-73203d5447a5" manual="true" dockArea="left">
+          <element uuid="382dde5a-44c8-454a-9c54-0ea3245812a0" manual="true">
+            <bo>
+              <seg>pvg</seg>
+              <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+              <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>onBuzzerIn</seg>
+          </bo>
+          <position y="10.0"/>
+        </element>
+        <element uuid="8651549d-6e20-42ed-bc0e-19a4f858f560" manual="true" dockArea="right">
+          <element uuid="fafa01d7-74e2-4805-8545-1da1b995c330" manual="true">
+            <bo>
+              <seg>pvg</seg>
+              <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+              <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>onBuzzerOut</seg>
+          </bo>
+          <position x="187.02083587646484" y="10.000000000000014"/>
+        </element>
+        <element uuid="4a29e7b8-d2bf-4e17-972d-ee531dc945ed" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+            <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>tBuzzer</seg>
+        </bo>
+        <position x="870.0" y="9.999999999999986"/>
+        <size width="276.83985137939453" height="110.0"/>
+      </element>
+      <element uuid="caaa748c-9bbc-4a51-b9a2-0c4ed25af5d8" manual="true">
+        <element uuid="35024146-9947-4389-b46e-e1b009fd70a7" manual="true" dockArea="right">
+          <element uuid="f6d363f3-fd6b-428a-b907-1daa10a15ffa" manual="true">
+            <bo>
+              <seg>pvg</seg>
+              <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+              <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>currentTimeIn</seg>
+          </bo>
+          <position x="375.75390625" y="270.0"/>
+        </element>
+        <element uuid="6b0b7cbb-ef53-449e-96b9-fedcc772c2c0" manual="true" dockArea="left">
+          <element uuid="0380830e-6436-4f1a-a1f2-17ba48c00026" manual="true">
+            <bo>
+              <seg>pvg</seg>
+              <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+              <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>doorStatusIn</seg>
+          </bo>
+          <position y="310.0"/>
+        </element>
+        <element uuid="490f324d-8387-44f6-9d4d-738d3a6a7822" manual="true" dockArea="right">
+          <element uuid="b23b8a2e-06f1-4138-978b-cb7be2ca2ade" manual="true">
+            <bo>
+              <seg>pvg</seg>
+              <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+              <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>onBuzzer</seg>
+          </bo>
+          <position x="401.671875" y="50.0"/>
+        </element>
+        <element uuid="e2c4db4c-dfd9-4886-8dc1-06515db064b3" manual="true" dockArea="right">
+          <element uuid="98c39253-10f6-4638-bb3f-82deb5c4f945" manual="true">
+            <bo>
+              <seg>pvg</seg>
+              <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+              <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>operationModeOut</seg>
+          </bo>
+          <position x="347.5572814941406" y="400.0"/>
+        </element>
+        <element uuid="7772000f-a6b0-4d6d-b001-074fccf51d61" manual="true" dockArea="right">
+          <element uuid="84223d01-7ce4-463e-943b-4098168111a4" manual="true">
+            <bo>
+              <seg>pvg</seg>
+              <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+              <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>powerOut</seg>
+          </bo>
+          <position x="400.1940116882324" y="500.0"/>
+        </element>
+        <element uuid="c8ce42af-a17c-4ea2-8f46-1d335aa4370b" manual="true" dockArea="right">
+          <element uuid="51528a79-327d-4920-aa2a-87e0ba3a2422" manual="true">
+            <bo>
+              <seg>pvg</seg>
+              <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+              <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>startStopPauseOut</seg>
+          </bo>
+          <position x="345.34374237060547" y="180.0"/>
+        </element>
+        <element uuid="3c4695b6-5b5d-420a-a357-9bab72fc12b7" manual="true" dockArea="right">
+          <element uuid="ecdb4668-6bd9-41cc-a838-b19b2a60b4f9" manual="true">
+            <bo>
+              <seg>pvg</seg>
+              <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+              <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>startTimeOut</seg>
+          </bo>
+          <position x="380.94921875" y="110.0"/>
+        </element>
+        <element uuid="6a1ac658-025b-4204-9945-9d2e478fe607" manual="true" dockArea="left">
+          <element uuid="c0601be7-8301-42c4-828e-f6bb0b3282ac" manual="true">
+            <bo>
+              <seg>pvg</seg>
+              <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+              <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>userCmdIn</seg>
+          </bo>
+          <position y="30.000000000000057"/>
+        </element>
+        <element uuid="477e3591-0af0-446d-bbf7-0fe548da5249" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+            <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>tCtl</seg>
+        </bo>
+        <position x="170.0" y="89.99999999999999"/>
+        <size width="470.0" height="600.0"/>
+      </element>
+      <element uuid="e5b53147-3cde-4c69-bca4-e130fd929ace" manual="true">
+        <element uuid="1382e902-941d-487e-8f25-c35e52e4f5d6" manual="true" dockArea="left">
+          <element uuid="50421070-4b8a-4f08-b372-4aa4908f4ce7" manual="true">
+            <bo>
+              <seg>pvg</seg>
+              <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+              <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>operationModeIn</seg>
+          </bo>
+          <position y="10.0"/>
+        </element>
+        <element uuid="54ef0c45-d929-4817-b211-16a232c0884b" manual="true" dockArea="left">
+          <element uuid="67c9b985-c6f3-4777-a45d-f85f715455d4" manual="true">
+            <bo>
+              <seg>pvg</seg>
+              <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+              <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>powerIn</seg>
+          </bo>
+          <position y="60.0"/>
+        </element>
+        <element uuid="d9baa5ac-6c0b-4006-8a38-4b78407ee903" manual="true" dockArea="right">
+          <element uuid="0729ccc2-1b9f-42db-a0a9-6a34e4a1847d" manual="true">
+            <bo>
+              <seg>pvg</seg>
+              <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+              <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>powerOut</seg>
+          </bo>
+          <position x="250.06122207641602" y="60.000000000000114"/>
+        </element>
+        <element uuid="6b3cbf60-d68e-43d8-ab4e-275d4ab21b08" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+            <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>tHeater</seg>
+        </bo>
+        <position x="880.0" y="610.0"/>
+        <size width="319.8672103881836" height="160.0"/>
+      </element>
+      <element uuid="52c0f617-5b37-4b25-b8fc-62fb00a41181" manual="true">
+        <element uuid="dfca5c25-f3ba-4495-b038-300d6e02a327" manual="true" dockArea="left">
+          <element uuid="5cea8999-2e55-49ef-89cb-425aa98c64ac" manual="true">
+            <bo>
+              <seg>pvg</seg>
+              <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+              <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>startStopPauseIn</seg>
+          </bo>
+          <position y="60.0"/>
+        </element>
+        <element uuid="64325898-8f7f-40be-8dfe-234d79b176d5" manual="true" dockArea="left">
+          <element uuid="74308915-d880-4348-b2da-a5a019b3643d" manual="true">
+            <bo>
+              <seg>pvg</seg>
+              <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+              <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>timeIn</seg>
+          </bo>
+          <position y="10.0"/>
+        </element>
+        <element uuid="8752e78b-8b09-4fdb-b705-e38bb4f560d5" manual="true" dockArea="bottom">
+          <element uuid="6c315bd4-4d6f-4862-9f45-df48286fc1e2" manual="true">
+            <bo>
+              <seg>pvg</seg>
+              <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+              <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+            </bo>
+          </element>
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>timeOut</seg>
+          </bo>
+          <position x="120.0" y="136.0"/>
+        </element>
+        <element uuid="58aef7f1-99ac-48ec-b89d-558d3007bc9c" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+            <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>tTimer</seg>
+        </bo>
+        <position x="860.0" y="180.0"/>
+        <size width="318.34376525878906" height="160.0"/>
+      </element>
+      <element uuid="f84b59c5-7b41-4123-bd7b-bd3eb8fa7588" manual="true">
+        <element uuid="32920dad-3683-4d52-b454-68c21ba4b445" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+            <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>connection_reference</seg>
+          <seg>buzzerConn : MicrowaveSystem_impl_Instance.thisCtlProc.tCtl.onBuzzer -> MicrowaveSystem_impl_Instance.thisCtlProc.tBuzzer.onBuzzerIn</seg>
+        </bo>
+      </element>
+      <element uuid="5f73a43c-458d-4529-b651-cbe53ef2a9f2" manual="true">
+        <element uuid="8c4643d7-5f02-4ec7-b56f-a71259aaca2a" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+            <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>connection_reference</seg>
+          <seg>heaterConn : MicrowaveSystem_impl_Instance.thisCtlProc.tCtl.powerOut -> MicrowaveSystem_impl_Instance.thisCtlProc.tHeater.powerIn</seg>
+        </bo>
+      </element>
+      <element uuid="bf9adcdd-22b0-4539-990b-e4a3f8c800f7" manual="true">
+        <element uuid="85c2cfd5-d07e-485c-a0e3-5c33fd0876ae" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+            <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>connection_reference</seg>
+          <seg>heaterModeConn : MicrowaveSystem_impl_Instance.thisCtlProc.tCtl.operationModeOut -> MicrowaveSystem_impl_Instance.thisCtlProc.tHeater.operationModeIn</seg>
+        </bo>
+      </element>
+      <element uuid="5b1fb5f4-431d-4a9d-a6a1-93649c6855df" manual="true">
+        <element uuid="0c6a0c58-a0ee-4cc1-bf29-ce004bce45c0" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+            <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>connection_reference</seg>
+          <seg>timerConn : MicrowaveSystem_impl_Instance.thisCtlProc.tCtl.startTimeOut -> MicrowaveSystem_impl_Instance.thisCtlProc.tTimer.timeIn</seg>
+        </bo>
+      </element>
+      <element uuid="84bd5855-a3e3-49fb-bc6f-53521ad74a30" manual="true">
+        <element uuid="165c209b-80d3-49a4-8a1c-a595a75ba3db" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+            <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>connection_reference</seg>
+          <seg>timerCurrentTimeConn : MicrowaveSystem_impl_Instance.thisCtlProc.tTimer.timeOut -> MicrowaveSystem_impl_Instance.thisCtlProc.tCtl.currentTimeIn</seg>
+        </bo>
+      </element>
+      <element uuid="c5427842-ee29-478a-b41b-8e9fa7166b13" manual="true">
+        <element uuid="211b54d7-8b8f-4776-be1e-fab8355d76e7" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+            <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>connection_reference</seg>
+          <seg>timerStartStopConn : MicrowaveSystem_impl_Instance.thisCtlProc.tCtl.startStopPauseOut -> MicrowaveSystem_impl_Instance.thisCtlProc.tTimer.startStopPauseIn</seg>
+        </bo>
+      </element>
+      <element uuid="b6fde0f4-8207-479c-b9ed-83fafa539048" manual="true" dockArea="right">
+        <element uuid="115072eb-ba5a-4ac3-8090-5330b2d822cd" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+            <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>currentTimeOut</seg>
+        </bo>
+        <position x="1185.78125" y="360.0"/>
+      </element>
+      <element uuid="5487a377-534e-477a-a9c3-786385da6a92" manual="true" dockArea="left">
+        <element uuid="b0bec7cc-dff5-4671-b45f-1ff8fc2e79b6" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+            <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>doorStatusIn</seg>
+        </bo>
+        <position y="93.33333333333334"/>
+      </element>
+      <element uuid="2f60ded8-40e8-428e-b66d-3d7374d1bea1" manual="true" dockArea="right">
+        <element uuid="923f4b1f-6772-42da-9c0e-bcda474eebc8" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+            <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>onBuzzer</seg>
+        </bo>
+        <position x="1222.0703125" y="10.0"/>
+      </element>
+      <element uuid="c5ce3a23-379d-488d-9d38-c8e09fe3d57d" manual="true" dockArea="right">
+        <element uuid="dc843abc-2bad-47be-811b-e33861e92a5c" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+            <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>powerOut</seg>
+        </bo>
+        <position x="1220.5924491882324" y="720.0000000000001"/>
+      </element>
+      <element uuid="32be337e-4c18-4a66-a54d-fd96ef9d8a60" manual="true" dockArea="left">
+        <element uuid="b721ebf7-a2b7-4966-b227-2bcb165bf583" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+            <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>userCmdIn</seg>
+        </bo>
+        <position y="26.666666666666668"/>
+      </element>
+      <element uuid="b7b26ab1-1177-4ba3-90cd-00cbb944f61f" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+          <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+        </bo>
+      </element>
+      <element uuid="54a8c02e-328e-40f2-8774-0928700e7ce8" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+          <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>thisCtlProc</seg>
+      </bo>
+      <position x="350.0" y="70.00000000000001"/>
+      <size width="1290.3984375" height="792.0"/>
+    </element>
+    <element uuid="f3cda80a-b92a-4079-af89-fff268b7d1ff" manual="true">
+      <element uuid="897e77a6-f0ce-4759-a4cc-2e465db221ec" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>BA1</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="34dc0e7b-6f03-4032-b054-b7fb9a50d3ae" manual="true" dockArea="right">
+        <element uuid="372c8165-4513-4f60-a572-40515242214c" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+            <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>doorStatusOut</seg>
+        </bo>
+        <position x="199.625" y="15.333333333333314"/>
+      </element>
+      <element uuid="eb294d38-c4ce-4e93-bea4-a7b1eff4b2df" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+          <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>thisDoor</seg>
+      </bo>
+      <position x="12.0" y="214.66666666666669"/>
+      <size width="297.6015625" height="60.0"/>
+    </element>
+    <element uuid="c00eca81-3095-4b43-81db-44783d54eb44" manual="true">
+      <element uuid="520c566c-2695-43e7-b5a2-a4d3c1aa9d51" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>BA1</seg>
+        </bo>
+        <position y="110.0"/>
+      </element>
+      <element uuid="e4d49cba-cce4-479c-ad51-29e2db5f8360" manual="true" dockArea="left">
+        <element uuid="7ac0b6a6-437e-4b93-b63d-56df28b3517c" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+            <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>currentPowerIn</seg>
+        </bo>
+        <position y="60.0"/>
+      </element>
+      <element uuid="6c470fc0-a1e9-4f37-802a-96d7975ad591" manual="true" dockArea="left">
+        <element uuid="58f0c9ae-ba8a-4403-af4c-01a5e5c41128" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+            <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>remainingTimeIn</seg>
+        </bo>
+        <position/>
+      </element>
+      <element uuid="c88f44ee-d554-44e6-8bb8-037e52097dc2" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Memory_Binding</seg>
+          <seg>7a57aa46-31a6-41af-84d2-efb92ded7dff</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>thisScreen</seg>
+      </bo>
+      <position x="1710.0" y="790.0000000000001"/>
+      <size width="337.5885543823242" height="160.0"/>
+    </element>
+    <element uuid="b12a10f9-2c2e-4646-90cb-017985de4619" manual="true">
+      <element uuid="9da1cabe-da68-4826-be45-0885e8e9793f" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+          <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>buzzerConn : MicrowaveSystem_impl_Instance.thisCtlProc.onBuzzer -> MicrowaveSystem_impl_Instance.thisBuzzer.OnOffBuzzer</seg>
+      </bo>
+    </element>
+    <element uuid="368bf7e7-1338-4307-834a-32b7ed7c3cbf" manual="true">
+      <element uuid="e2aa5f7e-7b30-41c1-becb-1067766157bc" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+          <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>buzzerDevConn : MicrowaveSystem_impl_Instance.thisCtlProc.tBuzzer.onBuzzerOut -> MicrowaveSystem_impl_Instance.thisCtlProc.onBuzzer</seg>
+      </bo>
+    </element>
+    <element uuid="f18f62a3-7538-43ca-a8e7-54afb96e84d6" manual="true">
+      <element uuid="6841505b-1858-4c96-af12-74d2b8abbe7e" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+          <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>cmdConn : MicrowaveSystem_impl_Instance.thisButton.userCmdOut -> MicrowaveSystem_impl_Instance.thisCtlProc.userCmdIn</seg>
+      </bo>
+    </element>
+    <element uuid="55d8f02e-cad0-48ca-923d-7549bc285842" manual="true">
+      <element uuid="12a69e7f-4279-4034-8ee8-84b6ee9f497f" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+          <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>doorConn : MicrowaveSystem_impl_Instance.thisDoor.doorStatusOut -> MicrowaveSystem_impl_Instance.thisCtlProc.doorStatusIn</seg>
+      </bo>
+      <bendpoints>
+        <point x="39.6015625" y="216.66661071777344"/>
+        <point x="39.6015625" y="203.3333282470703"/>
+      </bendpoints>
+    </element>
+    <element uuid="521bced2-47be-4c2a-8e15-b134f4a72353" manual="true">
+      <element uuid="2c40b3f5-1575-4415-afc4-be164c3edc67" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+          <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>doorStatusConn : MicrowaveSystem_impl_Instance.thisCtlProc.doorStatusIn -> MicrowaveSystem_impl_Instance.thisCtlProc.tCtl.doorStatusIn</seg>
+      </bo>
+    </element>
+    <element uuid="10220d82-b1fe-4276-8eb0-17b66f4dddb8" manual="true">
+      <element uuid="3f0e86a4-3f2b-41c1-8e2e-3dfca6cfe78f" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+          <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>heaterDevConn : MicrowaveSystem_impl_Instance.thisCtlProc.tHeater.powerOut -> MicrowaveSystem_impl_Instance.thisCtlProc.powerOut</seg>
+      </bo>
+    </element>
+    <element uuid="4c41e3e3-55d3-4c21-b517-eee87f9f00f3" manual="true">
+      <element uuid="270f808b-03ab-46d6-96f5-17c86170bfb6" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+          <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>screenPowerConn : MicrowaveSystem_impl_Instance.thisCtlProc.powerOut -> MicrowaveSystem_impl_Instance.thisScreen.currentPowerIn</seg>
+      </bo>
+    </element>
+    <element uuid="dd16ae40-828b-4435-9d8e-4f983b53d160" manual="true">
+      <element uuid="60447e27-77cd-40ce-a106-7da7da641380" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+          <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>screenTimeConn : MicrowaveSystem_impl_Instance.thisCtlProc.currentTimeOut -> MicrowaveSystem_impl_Instance.thisScreen.remainingTimeIn</seg>
+      </bo>
+      <bendpoints>
+        <point x="1375.0" y="576.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="ef8bc1b8-d1fe-4d61-af35-70b8df9fbb54" manual="true">
+      <element uuid="fee65b73-0bfe-47b5-bd57-eae1eae188c0" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+          <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>timerDevConn : MicrowaveSystem_impl_Instance.thisCtlProc.tTimer.timeOut -> MicrowaveSystem_impl_Instance.thisCtlProc.currentTimeOut</seg>
+      </bo>
+    </element>
+    <element uuid="64b972c9-0c22-44a1-b7dc-a11cfc74ff17" manual="true">
+      <element uuid="73d11d5b-418f-4e9a-be14-953ee2bcb797" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+          <seg>887aa41d-d7a8-493d-9b38-01fe508be0a8</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>userCmdConn : MicrowaveSystem_impl_Instance.thisCtlProc.userCmdIn -> MicrowaveSystem_impl_Instance.thisCtlProc.tCtl.userCmdIn</seg>
+      </bo>
+    </element>
+    <bo>
+      <seg>org.osate.ge.diagrams.instance</seg>
+      <seg>system_instance</seg>
+      <seg>/projekt/instances/microwavesystem_microwavesystem_impl_instance.aaxl2</seg>
+    </bo>
+    <position x="-280.0" y="-40.0"/>
+    <size width="2090.0" height="989.9999999999999"/>
+  </element>
+  <config type="structure" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties>
+      <property>deployment_properties::actual_memory_binding</property>
+      <property>deployment_properties::actual_connection_binding</property>
+    </enabledAadlProperties>
+    <context>
+      <seg>org.osate.ge.diagrams.instance</seg>
+      <seg>system_instance</seg>
+      <seg>/projekt/instances/microwavesystem_microwavesystem_impl_instance.aaxl2</seg>
+    </context>
+  </config>
+</diagram:Diagram>

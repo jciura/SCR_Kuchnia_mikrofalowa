@@ -1,0 +1,41 @@
+--package DoorSensor
+--public
+--    with Common_Types;
+--    with Base_Types;
+--
+--    
+--
+--    thread tDoor
+--        features
+--            status_out: out data port Base_Types::Boolean;
+--            emergency: out event port;
+--        properties
+--            Dispatch_Protocol => Periodic;
+--            Period => 20 ms;
+--    end tDoor;
+--
+--    thread implementation tDoor.impl
+--    end tDoor.impl;
+--
+--    process DoorProcess
+--        features
+--            door_status: out data port Base_Types::Boolean;
+--            emergency_stop: out event port;
+--    end DoorProcess;
+--
+--    process implementation DoorProcess.impl
+--        subcomponents
+--            tDoor: thread tDoor.impl;
+--        connections
+--            doorConn: port tDoor.status_out -> door_status;
+--            emergConn: port tDoor.emergency -> emergency_stop;
+--    end DoorProcess.impl;
+--
+--    processor DoorProcessor
+--        features
+--            eth: requires bus access Common_Types::ethernet;
+--        properties
+--            Clock_Period => 1 ms;
+--    end DoorProcessor;
+--
+--end DoorSensor;

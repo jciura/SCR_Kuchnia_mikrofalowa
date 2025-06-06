@@ -1,0 +1,298 @@
+package MicrowaveSystem
+public
+	with Base_Types;
+	with Data_Model;
+	with SEI; 
+	
+	bus ethernet
+		properties
+  			Transmission_Time => [Fixed => 1ns..2ns; PerByte => 5ns ..6ns;];
+    		Period => 1 ms;
+    		SEI::BandWidthCapacity => 100.0 MBytesps;
+    		SEI::BandWidthBudget => 200.0 KBytesps;
+	end ethernet;
+
+	memory RAM
+        features
+            BA1: requires bus access ethernet;
+        properties
+            SEI::GrossWeight => 0.1 kg;
+    end RAM;
+
+	memory implementation RAM.Standard
+	end RAM.Standard;
+
+	data HeatPower
+		properties
+			Data_Model::Data_Representation => Integer;
+			Data_Model::Integer_Range => 0 .. 100;
+	end HeatPower;
+
+	data OperationMode
+		properties
+			Data_Model::Enumerators => ("OFF", "HEATING", "DEFROST", "GRILL");
+	end OperationMode;
+
+	data Status
+		properties
+			Data_Model::Enumerators => ("START", "STOP", "PAUSE");
+	end Status;
+
+	data UserCommand
+	end UserCommand;
+
+	data implementation UserCommand.impl
+		subcomponents
+			start_stop_pause: data Status;
+			mode_selection: data OperationMode;
+			power_level: data HeatPower;
+			timer_setting: data Base_Types::Integer_32;
+	end UserCommand.impl;
+
+	data BuzzerVar
+		properties
+			Data_Model::Data_Representation => Boolean;
+	end BuzzerVar;
+
+	---------------------------------------------------------------
+	-- Devices --
+
+	device Button
+		features
+			userCmdOut: out event data port UserCommand;
+			BA1: requires bus access ethernet;
+		properties
+			SEI::GrossWeight => 0.05 kg;
+            SEI::PowerCapacity => 500.0 mW;
+	end Button;
+
+	device implementation Button.impl
+	end Button.impl;
+
+	device Door
+		features
+			doorStatusOut: out data port Base_Types::Boolean;
+			BA1: requires bus access ethernet;
+		properties
+	        SEI::GrossWeight => 1.5 kg;
+	        SEI::PowerCapacity => 1000.0 mW;
+	end Door;
+
+	device implementation Door.impl
+	end Door.impl;
+
+	device Heater
+		features
+			powerIn: in data port HeatPower;
+			operationModeIn: in data port OperationMode;
+			BA1: requires bus access ethernet;
+		properties
+            SEI::GrossWeight => 2.5 kg;
+            SEI::PowerCapacity => 1500.0 mW;
+	end Heater;
+
+	device implementation Heater.impl
+	end Heater.impl;
+
+	device Screen
+		features
+			remainingTimeIn: in data port Base_Types::Integer_32;
+			currentPowerIn: in data port HeatPower;
+			BA1: requires bus access ethernet;
+		properties
+        	SEI::GrossWeight => 1.0 kg;
+        	SEI::PowerCapacity => 750.0 mW;
+	end Screen;
+
+	device implementation Screen.impl
+	end Screen.impl;
+
+	device Buzzer
+		features
+			OnOffBuzzer: in data port BuzzerVar;
+		properties
+       		SEI::PowerCapacity => 100.0 mW;
+	end Buzzer;
+
+	device implementation Buzzer.impl
+	end Buzzer.impl;
+
+	---------------------------------------------------------------
+	-- Threads --
+
+	thread tTimer
+        features
+            timeIn: in data port Base_Types::Integer_32;
+            timeOut: out data port Base_Types::Integer_32;
+            startStopPauseIn: in data port Status;
+        properties
+            SEI::MIPSBudget => 0.8 mips;
+            SEI::SafetyCriticality => 2;
+            Dispatch_Protocol => Periodic;
+            Period => 1000 ms;
+            Compute_Execution_Time => 1 ms .. 2 ms;
+    end tTimer;
+
+	thread implementation tTimer.impl
+	end tTimer.impl;
+
+	thread tHeater
+		features
+			powerIn: in data port HeatPower;
+			powerOut: out data port HeatPower;
+			operationModeIn: in data port OperationMode;
+		properties
+			SEI::MIPSBudget => 1.2 mips;
+			SEI::SafetyCriticality => 2;
+			Dispatch_Protocol => Periodic;
+			Period => 50 ms;
+			Compute_Execution_Time => 2 ms .. 5 ms;
+	end tHeater;
+
+	thread implementation tHeater.impl
+	end tHeater.impl;
+
+	thread tBuzzer
+		features
+			onBuzzerIn: in data port BuzzerVar;
+			onBuzzerOut: out data port BuzzerVar;
+		properties
+			SEI::MIPSBudget => 0.4 mips;
+			SEI::SafetyCriticality => 2;
+			Dispatch_Protocol => Periodic;
+			Period => 500 ms;
+			Compute_Execution_Time => 1 ms .. 2 ms;
+	end tBuzzer;
+
+	thread implementation tBuzzer.impl
+	end tBuzzer.impl;
+
+	thread tCtl
+		features
+			userCmdIn: in event data port UserCommand;
+			doorStatusIn: in event data port Base_Types::Boolean;
+			powerOut: out data port HeatPower;
+			operationModeOut: out data port OperationMode;
+			startTimeOut: out data port Base_Types::Integer_32;
+			onBuzzer: out data port BuzzerVar;
+			startStopPauseOut: out data port Status;
+			currentTimeIn: in data port Base_Types::Integer_32;
+		properties
+			SEI::MIPSBudget => 1.5 mips;
+			SEI::SafetyCriticality => 2;
+			Dispatch_Protocol => Periodic;
+			Dispatch_Offset => 2 ms;
+			Deadline => 15 ms;
+			Period => 20000 ms;
+			Compute_Execution_Time => 2 ms .. 4 ms;
+	end tCtl;
+
+	thread implementation tCtl.impl
+	end tCtl.impl;
+	
+	processor corei5
+		features
+			eth: requires bus access ethernet;
+		properties
+			Scheduling_Protocol => (Round_Robin_Protocol);
+			Clock_Period => 1ms;
+			Timing_Properties::Processor_Capacity => 1.0 MIPS;
+	end corei5;
+
+	---------------------------------------------------------------
+	-- Controller Process --
+
+	process Controller
+		features
+			userCmdIn: in event data port UserCommand;
+			doorStatusIn: in data port Base_Types::Boolean;
+			powerOut: out data port HeatPower;
+			currentTimeOut: out data port Base_Types::Integer_32;
+			onBuzzer: out data port BuzzerVar;
+		properties
+  			SEI::MIPSBudget => 0.8 mips;
+	end Controller;
+
+	process implementation Controller.impl
+		subcomponents
+			tCtl: thread tCtl.impl;
+			tHeater: thread tHeater.impl;
+			tTimer: thread tTimer.impl;
+			tBuzzer: thread tBuzzer.impl;
+
+		connections
+			userCmdConn: port userCmdIn -> tCtl.userCmdIn;
+			doorStatusConn: port doorStatusIn -> tCtl.doorStatusIn;
+
+			heaterDevConn: port tHeater.powerOut -> powerOut;
+			heaterConn: port tCtl.powerOut -> tHeater.powerIn;
+			heaterModeConn: port tCtl.operationModeOut -> tHeater.operationModeIn;
+
+			timerDevConn: port tTimer.timeOut -> currentTimeOut;
+			timerConn: port tCtl.startTimeOut -> tTimer.timeIn;
+
+			buzzerDevConn: port tBuzzer.onBuzzerOut -> onBuzzer;
+			buzzerConn: port tCtl.onBuzzer -> tBuzzer.onBuzzerIn;
+
+			timerStartStopConn: port tCtl.startStopPauseOut -> tTimer.startStopPauseIn;
+			timerCurrentTimeConn: port tTimer.timeOut -> tCtl.currentTimeIn;
+	end Controller.impl;
+
+	---------------------------------------------------------------
+	-- System Implementation --
+
+	system MicrowaveSystem
+	end MicrowaveSystem;
+
+	system implementation MicrowaveSystem.impl
+		subcomponents
+			thisCtlProc: process Controller.impl;
+			thisButton: device Button.impl;
+			thisDoor: device Door.impl;
+			thisScreen: device Screen.impl;
+			thisBuzzer: device Buzzer.impl;
+			cpu: processor corei5;
+			Mag_bus: bus ethernet;
+			Stand_Memory: memory RAM.Standard;
+
+		connections
+			cmdConn: port thisButton.userCmdOut -> thisCtlProc.userCmdIn;
+			doorConn: port thisDoor.doorStatusOut -> thisCtlProc.doorStatusIn;
+			screenTimeConn: port thisCtlProc.currentTimeOut -> thisScreen.remainingTimeIn;
+			screenPowerConn: port thisCtlProc.powerOut -> thisScreen.currentPowerIn;
+			buzzerConn: port thisCtlProc.onBuzzer -> thisBuzzer.OnOffBuzzer;
+			
+		properties
+            SEI::SafetyCriticality => 2;
+			SEI::MIPSCapacity => 2.4 mips;
+			SEI::WeightLimit => 10.0 kg;
+			SEI::PowerCapacity => 2000.0 W;
+			
+			Actual_Connection_Binding => (reference(Mag_bus)) applies to cmdConn;
+			Actual_Connection_Binding => (reference(Mag_bus)) applies to doorConn;
+			Actual_Connection_Binding => (reference(Mag_bus)) applies to screenTimeConn;
+			Actual_Connection_Binding => (reference(Mag_bus)) applies to screenPowerConn;
+			Actual_Connection_Binding => (reference(Mag_bus)) applies to buzzerConn;
+			
+			Actual_Connection_Binding => (reference(Mag_bus)) applies to thisCtlProc.userCmdConn;
+			Actual_Connection_Binding => (reference(Mag_bus)) applies to thisCtlProc.doorStatusConn;
+			Actual_Connection_Binding => (reference(Mag_bus)) applies to thisCtlProc.heaterDevConn;
+			Actual_Connection_Binding => (reference(Mag_bus)) applies to thisCtlProc.heaterConn;
+			Actual_Connection_Binding => (reference(Mag_bus)) applies to thisCtlProc.heaterModeConn;	
+			Actual_Connection_Binding => (reference(Mag_bus)) applies to thisCtlProc.timerDevConn;
+			Actual_Connection_Binding => (reference(Mag_bus)) applies to thisCtlProc.timerConn;	
+			Actual_Connection_Binding => (reference(Mag_bus)) applies to thisCtlProc.buzzerDevConn;	
+			Actual_Connection_Binding => (reference(Mag_bus)) applies to thisCtlProc.buzzerConn;
+			Actual_Connection_Binding => (reference(Mag_bus)) applies to thisCtlProc.timerStartStopConn;	
+			Actual_Connection_Binding => (reference(Mag_bus)) applies to thisCtlProc.timerCurrentTimeConn;
+			Actual_Memory_Binding => (reference(Stand_Memory)) applies to cpu;
+			Actual_Memory_Binding => (reference(Stand_Memory)) applies to thisCtlProc;
+			Actual_Memory_Binding => (reference(Stand_Memory)) applies to thisButton;
+			Actual_Memory_Binding => (reference(Stand_Memory)) applies to thisDoor;
+			Actual_Memory_Binding => (reference(Stand_Memory)) applies to thisScreen;
+			Actual_Memory_Binding => (reference(Stand_Memory)) applies to thisBuzzer;
+	            
+					
+	end MicrowaveSystem.impl;
+
+end MicrowaveSystem;
