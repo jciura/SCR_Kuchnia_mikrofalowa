@@ -9,8 +9,7 @@ public
   			Transmission_Time => [Fixed => 1ns..2ns; PerByte => 5ns ..6ns;];
     		Period => 1 ms;
     		SEI::BandWidthCapacity => 100.0 MBytesps;
-    		SEI::BandWidthBudget => 200.0 KBytesps;
-	end ethernet;
+    	end ethernet;
 
 	memory RAM
         features
@@ -58,12 +57,12 @@ public
 	-- Devices --
 
 	device Button
-		features
-			userCmdOut: out event data port UserCommand;
-			BA1: requires bus access ethernet;
-		properties
-			SEI::GrossWeight => 0.05 kg;
-            SEI::PowerCapacity => 500.0 mW;
+	    features
+	        userCmdOut: out event data port UserCommand;
+	        BA1: requires bus access ethernet;
+	    properties
+	        SEI::GrossWeight => 0.05 kg;
+	        SEI::PowerCapacity => 2.0 mW;
 	end Button;
 
 	device implementation Button.impl
@@ -75,7 +74,7 @@ public
 			BA1: requires bus access ethernet;
 		properties
 	        SEI::GrossWeight => 1.5 kg;
-	        SEI::PowerCapacity => 1000.0 mW;
+	        SEI::PowerCapacity => 30.0 W;
 	end Door;
 
 	device implementation Door.impl
@@ -88,7 +87,7 @@ public
 			BA1: requires bus access ethernet;
 		properties
             SEI::GrossWeight => 2.5 kg;
-            SEI::PowerCapacity => 1500.0 mW;
+            SEI::PowerCapacity => 800.0 W;
 	end Heater;
 
 	device implementation Heater.impl
@@ -101,7 +100,7 @@ public
 			BA1: requires bus access ethernet;
 		properties
         	SEI::GrossWeight => 1.0 kg;
-        	SEI::PowerCapacity => 750.0 mW;
+        	SEI::PowerCapacity => 50.0 mW;
 	end Screen;
 
 	device implementation Screen.impl
@@ -111,7 +110,7 @@ public
 		features
 			OnOffBuzzer: in data port BuzzerVar;
 		properties
-       		SEI::PowerCapacity => 100.0 mW;
+       		SEI::PowerCapacity => 1.0 W;
 	end Buzzer;
 
 	device implementation Buzzer.impl
@@ -196,7 +195,7 @@ public
 		properties
 			Scheduling_Protocol => (Round_Robin_Protocol);
 			Clock_Period => 1ms;
-			Timing_Properties::Processor_Capacity => 1.0 MIPS;
+			Timing_Properties::Processor_Capacity => 3.0 MIPS;
 	end corei5;
 
 	---------------------------------------------------------------
@@ -266,7 +265,7 @@ public
             SEI::SafetyCriticality => 2;
 			SEI::MIPSCapacity => 2.4 mips;
 			SEI::WeightLimit => 10.0 kg;
-			SEI::PowerCapacity => 2000.0 W;
+			SEI::PowerCapacity => 1000.0 W;
 			
 			Actual_Connection_Binding => (reference(Mag_bus)) applies to cmdConn;
 			Actual_Connection_Binding => (reference(Mag_bus)) applies to doorConn;
