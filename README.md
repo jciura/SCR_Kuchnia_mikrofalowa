@@ -142,8 +142,6 @@ Wagi urządzeń nie przekraczają limitu 10 kg
 ![Analiza bound](bound.png)
 
 ### 6. Weryfikacja bezpieczeństwa
-
--   Wszystkie komponenty krytyczne oznaczone  `SafetyCriticality => 2`
     
 -   Mechanizm zatrzymania przy otwartych drzwiach
     
